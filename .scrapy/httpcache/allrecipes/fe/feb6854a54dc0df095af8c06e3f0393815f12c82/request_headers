@@ -1,6 +1,0 @@
-Referer: https://www.allrecipes.com/sitemap_1.xml
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en
-User-Agent: Scrapy/2.11.0 (+https://scrapy.org)
-Accept-Encoding: gzip, deflate
-Cookie: TMog=n000e9ce7dee643ab8e0a276c3c789d4f03; globalTI_SID=c9e2eab8-0168-49a5-8f3e-8bfab948037b; Mint=n000e9ce7dee643ab8e0a276c3c789d4f03; CSRFToken=982c6e657212e2eb2e424a3a4a2186cd; pc=7
