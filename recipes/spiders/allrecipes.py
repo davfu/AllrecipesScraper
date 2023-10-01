@@ -18,9 +18,12 @@ class AllrecipesSpider(scrapy.spiders.SitemapSpider):
         recipe_type = recipe[0].type[0]  # Assuming it's the first item in the list
 
          # Check if the first item in the list is of type 'Recipe'
-        if recipe and recipe[0].type and recipe[0].type[0] == 'Recipe':
+         # edit so that it finds the ones that has over 1000 reviews and a 4.5+ star rating
+        if recipe and recipe[0].type and recipe[0].type[0] == 'Recipe': 
             # Access the headline and print it
             headline = recipe[0].headline
             print(headline)
 
         return
+    
+    #  run scrapy crawl allrecipes in terminal
