@@ -1,0 +1,21 @@
+Content-Security-Policy: frame-ancestors 'self' *.specless.io *.specless.tech http://*.seo.aws.about.com https://*.seo.aws.about.com http://*.dotdash.com https://*.dotdash.com *.allrecipes.com
+Content-Encoding: gzip
+X-Abt-Application-Version: 1.110.0
+Link: <//www.allrecipes.com/static/1.110.0/cache/eNqlVlu6oyAM3tDwuYh5nU0EjMopFz_Adrr7CZdWbTlozzwoJOTPzZDY-QBBik6DCQo74X0XOfirez-QGkZkswKBk1U9uqdQPNUgzRvK6tkaNMF30PskdpU92hW4F6CndnRF01vXzYuf1L0sDVM32Y9I64RynMLvCcyIf6QPaNBVmS23HfFL_GVfdb6IgVIOhZzRszPSeWUTAmXzSc4OI0eascKq6TNwlSMxrem4IzHhFs39dt-I8BtwDLim4HwYrzE0AjjQ5Bf-qmxl_UCfxgA7opEeflfSYMlH3rcsPsQ_EIUlTNaxYK0Kcm7VYghO8iV-quzPhsFkQH3iTngrJCjmJ3C5qDVJsi235nIVXQVVEriE8HA4GZudNIFlds3YFlCV_T661Fxih7rT1474r1uhzlSJsIbaQchadrrY161h3Qe3iLA47J8qUh8VbNvPTuGmoFV6feJvWRlXVlxy3gaEpJgq7PKZB6nJ53cDmKWipVEO_-nr3tZGh8ZeQjE1yJHcZALmWO2tGn1YHBB7DuLyxmiBNXofhxwHE4fFnjwx3VwcLsyBVAfCXCrFLbiC8yR5ubOV-xn8NM7Q2XVz8TN9IrBB4V_JKYtwaCOKq9Rwk0vfzfoDEY8iN7o4T50oS8M01YqyY1k-KUkPlJH4aigX5CVT9Luw7momRP4iDeG66vSqKRyV5aA6f5EzDYjV5T3dQJbJl5eDfwcaJEqGOxXFdbuvoQbrNNmIP09xBCA4Mb2QB8ayR8nWuj3ADItSXjhEk3B78twvThlaEZ7u3ZM8ML3BtTEl74O1gfKel6OwklAO6bk9h4n93e-Ic2nobejBT2wxdP2d32SkenIc6E-gBm9eYYiul8v7xvkHWa3bTw.min.css>; rel=preload; as=style; nopush, <//www.allrecipes.com/static/1.110.0/fonts/copperpot.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin; nopush, <//www.allrecipes.com/static/1.110.0/fonts/copperpot-700.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin; nopush, <//www.googletagmanager.com/gtm.js?id=GTM-P3X3VT7>; rel=preload; as=script; nopush, <//www.allrecipes.com/static/1.110.0/fonts/sourcesanspro.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin; nopush, <//www.allrecipes.com/static/1.110.0/fonts/sourcesanspro-700.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin; nopush, <//www.google-analytics.com/analytics.js>; rel=preload; as=script; nopush, <//securepubads.g.doubleclick.net/tag/js/gpt.js>; rel=preload; as=script; nopush, <//www.allrecipes.com/static/1.110.0/cache/eNqFk2FuwjAMhS-0LHfYNO3XJIS4gJu6qWmadI5TBKefiyYGLBSpqlq_z4nz7NgsIOTsCFECWpfGKUWMkm2AYypi91kf43p0w4u9hfcLdDpmOqESKXbk75Hfv0BNvsFrSyVosa0ILqWBqilFKJDUtS6aNblN46r-udlVojPGNrGVnpNoqEIwKlNwx-AGir5CjPphGkYYpkRq9AVRDUJgdDSpnw-Lu2qRy9ydX5VtptLk0lSE969NJbrdvVWishxjK83HjNeVXh0Gjg2uVAjtue8l0ndBk0MSs_T_eYYAexR10GToMFCWS85_2E9ScwA8mpnwsLKbl_E8YoHcYORB0-6HOL-WOCOFXgdzrT1ZuDgpjO1yO0RjS3p2Rst-7gCT78UwUHjOkt69SILmL8korAbwD3pZdzY.min.js>; rel=preload; as=script; nopush; group=top, <//www.allrecipes.com/static/1.110.0/cache/eNqNVG1yozAMvVBdT8_Qv3sJ2QhQI-yuLSDk9BW4uyEkgcxkgmS_J-vbZgEhbzsIwmh_NSaX7Zf-_vaYpjd7C9KLXohJCLNxPbGYkaQ1T9GdCmaAQMxgsk-ReYvysfuOAYNkS0EwBWBbYY1p5i9CwmqH5HOql78nXqygeC726YKGKZyWSO8OdwxAXWv0IAVpEo6JpHj65GrH2EhVg_ptkZpWPlsIDf6hLBjU4qPD_7ZWRgIM1OhhDNYlhMqnvtMKruQXPMjRE7DJLaSlamv9BfpAFUbzzTCVVHyNv8qWu-kxzu-uySh7Ca8KEi6Tgb0uyJJ6L722ivFR2yiIpQ4axWgmRFOo2XTx_Akp9hl3m3Ch6aMN1S8ED0nvGU2NWDnwp7uDR1X7R-4wZ33NOAhz0W_Vg-xlVU6TI8kH-XM6fC5CKqnM3nD0J3M9PaAHvRuuw1zU45LVjGdymof7sm0CgY-PyVTacLHZMVsAdoNbARqOTldHq42_zM_8OZiYsssmjWlYy49YdUydvjGP4TwZCMm3G_VV55cFceBZcX9x7CoecOqeWVcsYlh4t-pxwebdDCNMP5neVaY.min.js>; rel=preload; as=script; nopush; group=bottom
+Cache-Control: max-age=1800, private
+Content-Type: text/html;charset=utf-8
+Strict-Transport-Security: max-age=15552000
+Referrer-Policy: no-referrer-when-downgrade
+X-Content-Security-Policy: frame-ancestors 'self' *.specless.io *.specless.tech http://*.seo.aws.about.com https://*.seo.aws.about.com http://*.dotdash.com https://*.dotdash.com *.allrecipes.com
+X-Content-Type-Options: nosniff
+Set-Cookie: pc=5; Path=/; Domain=.allrecipes.com
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Via: 1.1 google, 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Nel: {"report_to":"network-errors","max_age":2592000,"success_fraction":0,"failure_fraction":1.0, "include_subdomains": true}
+Report-To: {"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://r.3gl.net/hawklogserver/7823/re.p"}]}
+Date: Sun, 01 Oct 2023 03:55:43 GMT
+X-Served-By: cache-bfi-krnt7300107-BFI, cache-bfi-krnt7300107-BFI, cache-chi-kigq8000093-CHI
+X-Cache: MISS, MISS
+X-Cache-Hits: 0, 0
+X-Timer: S1696132543.070909,VS0,VE167
