@@ -27,10 +27,34 @@ class AllrecipesSpider(scrapy.spiders.SitemapSpider):
             if aggregate_rating and aggregate_rating.rating_count and aggregate_rating.rating_value:
                 rating_count = int(float(aggregate_rating.rating_count))
                 rating_value = float(aggregate_rating.rating_value)
+                ingredients = recipe[0].recipe_ingredient
 
-                if rating_count >= 1000 and rating_value >= 4.5:
+
+                # Check if there are more than 1000 reviews and 4.5 star rating
+                if rating_count >= 250 and rating_value >= 4.5 and len(ingredients) <= 8:
+                    nutrition = recipe[0].nutrition
+                    calories = nutrition.calories
+                    protein = nutrition.protein_content
+                    carbs = nutrition.carbohydrate_content
+                    fat = nutrition.fat_content
                     headline = recipe[0].headline
-                    print("headline: ", headline, " | rating: ", rating_value, " | count: ", rating_count)
-        return
-    
+                    category = recipe[0].recipe_category
+                    cuisine = recipe[0].recipe_cuisine
+                    url = recipe[0].main_entity_of_page.id
+
+                    yield {
+                        "url": url,
+                        "title": headline,
+                        "rating": rating_value,
+                        "rev_count": rating_count,
+                        "category": category,                            
+                        "cuisine": cuisine,
+                        "ingredients": ingredients,
+                        "nutrition": {
+                            "cals": calories,
+                            "protein": protein,
+                            "carbs": carbs,
+                            "fat": fat
+                        }
+                    }    
     #  run scrapy crawl allrecipes in terminal

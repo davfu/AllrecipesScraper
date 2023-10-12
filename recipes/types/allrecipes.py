@@ -1,3 +1,5 @@
+# created using quicktype, which quickly converts JSON to typesafe code
+
 from dataclasses import dataclass
 from typing import Optional, Any, List, TypeVar, Type, cast, Callable
 from datetime import datetime
