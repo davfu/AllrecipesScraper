@@ -7,7 +7,7 @@ delete_list = ['cups', 'cup', 'teaspoons', 'teaspoon', 'tablespoons', 'tablespoo
                'ground', 'to', 'taste', 'large', 'sliced', 'softened', 'shredded', 'cut', 'diced', 'beaten', 'grated',
                'for', 'medium', 'drained', 'thawed', 'crushed', 'finely', 'packages', 'halves', 'seasoned', 'fresh',
                'package', 'minced', 'pounded','dash','thickness','pinch','slices','cans','rinsed', 'slightly','can',
-               'bits','more','cold','with','leaves','frozen','container','quarts','quart','mashed', 'jars']
+               'bits','more','cold','with','leaves','frozen','container','quarts','quart','mashed', 'jars',]
 
 # Open the original JSONLines file
 file_path = '/Users/davidfu/Desktop/AllrecipesScraper/filteringredients/recipes.jsonlines'

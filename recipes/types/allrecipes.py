@@ -1,4 +1,5 @@
 # created using quicktype, which quickly converts JSON to typesafe code
+# into python objects and vice versa
 
 from dataclasses import dataclass
 from typing import Optional, Any, List, TypeVar, Type, cast, Callable
