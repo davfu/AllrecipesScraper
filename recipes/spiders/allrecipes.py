@@ -38,8 +38,8 @@ class AllrecipesSpider(scrapy.spiders.SitemapSpider):
                 ingredients = recipe[0].recipe_ingredient
 
 
-                # Check if there are more than 500 reviews, at most 10 ingredients, and 4.5 star rating
-                if rating_count >= 500 and rating_value >= 4.5 and len(ingredients) <= 10:
+                # Check if there are more than 100 reviews, at most 15 ingredients, and 4.0 star rating
+                if rating_count >= 100 and rating_value >= 4.0 and len(ingredients) <= 15:
                     nutrition = recipe[0].nutrition
                     # use regular expression to find number in the string for nutrition
                     calories = re.search(r'\d+', nutrition.calories)
@@ -51,6 +51,9 @@ class AllrecipesSpider(scrapy.spiders.SitemapSpider):
                     category = recipe[0].recipe_category
                     cuisine = recipe[0].recipe_cuisine
                     url = recipe[0].main_entity_of_page.id
+                    time = recipe[0].total_time
+                    image = recipe[0].image
+
                     # create yield to send it off to some entity, in this case a jsonlines file
                     yield {
                         "url": url,
@@ -60,11 +63,13 @@ class AllrecipesSpider(scrapy.spiders.SitemapSpider):
                         "category": category,                            
                         "cuisine": cuisine,
                         "ingredients": ingredients,
+                        "time": time,
                         "nutrition": {
                             "cals": int(calories.group()),
                             "protein": int(protein.group()),
                             "carbs": int(carbs.group()),
                             "fat": int(fat.group())
-                        }
+                        },
+                        "image": image
                     }    
     #  run scrapy crawl allrecipes -o '/Users/davidfu/Desktop/AllrecipesScraper/filteringredients/recipes.jsonlines' in terminal
