@@ -1,5 +1,5 @@
 import jsonlines
-import db
+import db as db
 from recipes.types.output import recipe_from_dict
 
 db.create_table(db.con)

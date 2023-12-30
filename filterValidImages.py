@@ -1,6 +1,6 @@
 import json
 
-input_file_path = 'recipes122623.jsonlines'
+input_file_path = 'FINAL.jsonlines'
 output_file_path = 'filtered.jsonlines'
 
 with open(input_file_path, 'r', encoding='utf-8') as input_file, \
