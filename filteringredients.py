@@ -6,7 +6,7 @@ from collections import Counter
 
 
 def get_ingredients():
-    with jsonlines.open("firstFilter.jsonlines", "r") as recipes:
+    with jsonlines.open("recipes.jsonlines", "r") as recipes:
         word_counts = parse_ingredients(recipes)
     return word_counts
 
@@ -44,14 +44,14 @@ delete_list = ['cup', 'teaspoon', 'cups','ounce','tablespoons','chopped','ground
                'style', 'oreo', 'request', 'coke', 'baker', 'karo', 'spray', 'paso', 'gulden', 'sargento', 'o', 'lettucedried', 'ray', 'crispix', 'swerve', 'hines', 'tri', 'breakstone', 'heinz', 'johnsonville', 'lean', 'dole', 'farms', 'm', 'bacardi', 'light', 'mazola', 'hunt', 'pure', 'doritos', 
                'pet', 'foods', 'rao', 'lars', 'ragu', 'mccain', 'cholula', 'quaker', 'tapatio', 'sides', 'petes', 'creations', 'egrice', 'hurst', 'coating', 'mix', 'stuffed', 'progresso', 'cattlemen', 'daniel', 'dean', 'mrs', 'mates', 'lay', 'lakes', 'melt', 'arthur', 'serve', 'rolo', 
                'shiner', 'joy', 'brewer', 'fiesta', 'top', 'ievelveeta', 'argo', 'kingsford', 'ortega', 'master', 'resistant', 'bouquet', 'emeril', 'essence', 'nestle', 'carnation', 'minute', 'fritos', 'spam', 'classico', 'zatarain', 'blend', 'whiz', 'calves', 'clamato', 'valentina', 'swan',
-               'vegetable', 'prego', 'king', 'maldon', 'swanson', 'life', 'reese', 'crock', 'eat', 'lit', 'l', 'smokies', 'bush', 'seasons', 'bragg', 'balance', 'ac', 'cent', 'pato', 'brickle', 'newman', 'long', 'kikkoman', 'delight', 'can', 't', 'it', 'conecuh', 'frontera', 'nilla', 'tyson', 'ready', 'basics']
+               'vegetable', 'prego', 'king', 'maldon', 'swanson', 'life', 'reese', 'crock', 'eat', 'lit', 'l', 'smokies', 'bush', 'seasons', 'bragg', 'balance', 'ac', 'cent', 'pato', 'brickle', 'newman', 'long', 'kikkoman', 'delight', 'can', 't', 'it', 'conecuh', 'frontera', 'nilla', 'tyson', 'ready', 'basics','garnish']
 
 for item in words:
     if item[1] <= 5:
         delete_list.append(item[0])
 
 # Open the original JSONLines file
-file_path = '/Users/davidfu/Desktop/Projects/AllrecipesScraper/firstFilter.jsonlines'
+file_path = '/Users/davidfu/Desktop/Projects/AllrecipesScraper/recipes.jsonlines'
 
 # Create a new JSONLines file for the modified data
 output_file_path = '/Users/davidfu/Desktop/Projects/AllrecipesScraper/FINAL.jsonlines'
@@ -59,33 +59,38 @@ output_file_path = '/Users/davidfu/Desktop/Projects/AllrecipesScraper/FINAL.json
 with open(file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
     for line in input_file:
         recipe = json.loads(line)
+        if recipe.get('image') is not None:
+            # Process the list of ingredients for the current recipe
+            ingredients = recipe.get('ingredients', [])
+            new_ingredients = []
 
-        # Process the list of ingredients for the current recipe
-        ingredients = recipe.get('ingredients', [])
-        new_ingredients = []
+            for ingredient in ingredients:
+                # Ensure a space after comma in cases like "2 green onions,chopped"
+                ingredient = re.sub(r'(\d+)\s*,\s*(\w+)', r'\1 \2', ingredient)
 
-        for ingredient in ingredients:
-            # Ensure a space after comma in cases like "2 green onions,chopped"
-            ingredient = re.sub(r'(\d+)\s*,\s*(\w+)', r'\1 \2', ingredient)
+                # Handle commas in multi-word ingredients like "green onions, sliced, white parts " 
+                ingredient = re.sub(r',\s*', ' ', ingredient)
 
-            # Handle commas in multi-word ingredients like "green onions, sliced, white parts " 
-            ingredient = re.sub(r',\s*', ' ', ingredient)
+                # Remove numbers, symbols, and unwanted words
+                cleaned_ingredient = ' '.join([word for word in re.split(r'[\s/()]+', ingredient) if word.lower() not in delete_list and not word.replace('.', '', 1).isdigit()])
 
-            # Remove numbers, symbols, and unwanted words
-            cleaned_ingredient = ' '.join([word for word in re.split(r'[\s/()]+', ingredient) if word.lower() not in delete_list and not word.replace('.', '', 1).isdigit()])
+                # Remove words with dashes
+                cleaned_ingredient = re.sub(r'\b[A-Za-z]+-[A-Za-z]+\b', '', cleaned_ingredient)
 
-            # Remove words with dashes
-            cleaned_ingredient = re.sub(r'\b[A-Za-z]+-[A-Za-z]+\b', '', cleaned_ingredient)
+                # Remove unwanted characters (comma, dash, period, parentheses) and space after them
+                cleaned_ingredient = re.sub(r'(,|\-|\.|\()\s*', '', cleaned_ingredient)
 
-            # Remove unwanted characters (comma, dash, period, parentheses) and space after them
-            cleaned_ingredient = re.sub(r'(,|\-|\.|\()\s*', '', cleaned_ingredient)
+                new_ingredients.append(cleaned_ingredient)
 
-            new_ingredients.append(cleaned_ingredient)
+            # Update the recipe's ingredients
+            for i in range(len(new_ingredients)): 
+                ingredient = new_ingredients[i]
+                cleaned = ingredient.strip()
+                new_ingredients[i] = cleaned
 
-        # Update the recipe's ingredients
-        recipe['ingredients'] = new_ingredients
+            recipe['ingredients'] = new_ingredients
 
-        # Write the modified recipe to the new JSONLines file
-        output_file.write(json.dumps(recipe) + '\n')
+            # Write the modified recipe to the new JSONLines file
+            output_file.write(json.dumps(recipe) + '\n')
 
 print("Recipe modification complete. Modified data saved to 'FINAL.jsonlines'")
